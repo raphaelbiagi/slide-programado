@@ -1,0 +1,458 @@
+@import url('https://fonts.googleapis.com/css2?family=Brick+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@font-face {
+    font-family: 'Brick Sans';
+    src: url('./fonts/BrickSans-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Brick Sans';
+    src: url('./fonts/BrickSans-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Brick Sans';
+    src: url('./fonts/BrickSans-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Brick Sans', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#game {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+#world {
+    display: flex;
+    width: 300vw;
+    /* 3 cenas */
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: transform 0.5s ease-in-out;
+}
+
+.scene {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.arrow {
+    position: absolute;
+    left: 700px;
+    bottom: 20%;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 15%;
+    border-radius: 20px;
+    background-color: transparent;
+    gap: 20px;
+
+
+    p {
+        font-family: 'Press Start 2P', cursive;
+        font-weight: 700 !important;
+        color: #000000;
+        transition: 0.2s;
+    }
+
+    img {
+        width: 100px;
+        height: 100px;
+        animation: swing 1s infinite ease-in-out;
+        user-select: none;
+        display: inline-block;
+    }
+}
+
+
+
+
+#player {
+    position: absolute;
+    bottom: 0px;
+    left: 50px;
+    /* começa à esquerda */
+    width: 80px;
+    transition: left 0.05s linear;
+}
+
+.cena1 {
+    background-image: url('/assets/imgs/fase1.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    padding: 40px;
+    align-items: center;
+    position: relative;
+
+    .texto-inicial {
+        width: 63%;
+        height: 70%;
+
+        h1 {
+            font-size: 100px;
+            color: #007d2a;
+            -webkit-text-stroke: 2px #1b1b1b;
+        }
+
+        .diferente {
+            font-size: 90px;
+            color: #ffb000;
+            -webkit-text-stroke: 2px #2e1b5b;
+        }
+
+        h2 {
+            font-size: 90px;
+            color: #007d2a;
+        }
+
+        h3 {
+            font-size: 50px;
+            color: #007d2a;
+            font-weight: 100;
+
+        }
+    }
+
+    .sprite {
+        width: 50px;
+        /* tamanho de 1 frame */
+        height: 115px;
+        position: absolute;
+        bottom: 0;
+        z-index: 9999;
+        /* 8 frames */
+    }
+
+}
+
+.cena2 {
+    background-image: url('/assets/imgs/fase2.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 40px;
+    position: relative;
+    justify-content: space-between;
+
+    .cabecalho {
+        width: 62%;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+
+        .arrow2 {
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            width: 15%;
+            border-radius: 20px;
+            background-color: transparent;
+            gap: 20px;
+
+            img {
+                width: 200px;
+                height: 200px;
+                animation: swing 1s infinite ease-in-out;
+                user-select: none;
+                display: inline-block;
+            }
+        }
+
+        h2 {
+            font-size: 40px;
+            font-family: 'Press Start 2P', cursive;
+            font-weight: 700 !important;
+            color: #e1ed62;
+        }
+
+    }
+
+    .texto-info {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        div {
+            width: 70%;
+            height: 300px;
+
+            h3 {
+                font-size: 45px;
+                text-align: left;
+            }
+        }
+    }
+
+    .fundo {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 30px;
+        background-color: #106e16;
+    }
+}
+
+.cena3 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 40px;
+    position: relative;
+    justify-content: space-between;
+
+    .cabecalho {
+        width: 62%;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+
+        .arrow2 {
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            width: 15%;
+            border-radius: 20px;
+            background-color: transparent;
+            gap: 20px;
+
+            img {
+                width: 150px;
+                height: 150px;
+                animation: swing 1s infinite ease-in-out;
+                user-select: none;
+                display: inline-block;
+            }
+        }
+
+        h2 {
+            font-size: 40px;
+            font-family: 'Press Start 2P', cursive;
+            font-weight: 700 !important;
+            color: #007d2a;
+            -webkit-text-stroke: 1px #1b1b1b;
+        }
+
+    }
+
+    .texto-central {
+        display: flex;
+        box-sizing: border-box;
+        padding-left: 220px;
+        width: 80%;
+
+        h3 {
+            font-size: 40px;
+            font-weight: 700 !important;
+            color: #007d2a;
+
+        }
+    }
+
+    .fundo_blocos {
+        width: 100%;
+        position: relative;
+
+        .blocos {
+            width: 50%;
+        }
+
+        .boneco1 {
+            position: absolute;
+            bottom: 59%;
+            left: 5.8%;
+            width: 5%;
+            animation: saltitar 0.5s ease-in-out infinite;
+            animation-delay: 0s;
+        }
+
+        .boneco2 {
+            position: absolute;
+            bottom: 59%;
+            left: 16.8%;
+            width: 5%;
+            animation: saltitar 0.5s ease-in-out infinite;
+            animation-delay: 0.2s;
+        }
+
+        .boneco3 {
+            position: absolute;
+            bottom: 59%;
+            left: 27.8%;
+            width: 5%;
+            animation: saltitar 0.5s ease-in-out infinite;
+            animation-delay: 0.4s;
+        }
+
+        .boneco4 {
+            position: absolute;
+            bottom: 59%;
+            left: 38.8%;
+            width: 5%;
+            animation: saltitar 0.5s ease-in-out infinite;
+            animation-delay: 0.6s;
+        }
+    }
+
+    .fundo {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 43px;
+        background-color: #106e16;
+    }
+}
+
+.nuvens {
+    width: 100%;
+    height: 50px;
+    height: 250px;
+    /* ajuste conforme sua necessidade */
+    overflow: hidden;
+    display: flex;
+    position: absolute;
+}
+
+.cloud {
+    width: 500px;
+    position: absolute;
+    animation: cloud 15s infinite linear;
+    top: 0;
+    z-index: 9999;
+}
+
+.cloud2 {
+    width: 400px;
+    position: absolute;
+    animation: cloud 20s infinite linear;
+    top: 0;
+    z-index: 9999;
+}
+
+.cloud3 {
+    width: 550px;
+    position: absolute;
+    animation: cloud 30s infinite linear;
+    top: 0;
+    z-index: 9999;
+}
+
+@keyframes cloud {
+    from {
+        right: -550px;
+    }
+
+    to {
+        right: 100%
+    }
+}
+
+@keyframes swing {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+}
+
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+}
+
+.cascade-js {
+    opacity: 0;
+    transform: translateX(-50px);
+    animation-fill-mode: forwards;
+}
+
+.cascade-js.show {
+    animation-name: slideInRight;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+}
+
+@keyframes slideInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes saltitar {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}

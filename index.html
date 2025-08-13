@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo com Setas</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Brick+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="game">
+        <div id="world">
+            <div class="scene" style="background: lightblue;">
+                <div class="nuvens">
+                    <img src="assets/imgs/clouds.png" class="cloud">
+                    <img src="assets/imgs/clouds.png" class="cloud2">
+                    <img src="assets/imgs/clouds.png" class="cloud3">
+                </div>
+                <div class="cena1">
+                    <div class="texto-inicial">
+                        <h1>DIREITO PROCESSUAL</h1>
+                        <h2 class="diferente">CONSTITUCIONAL</h2>
+                        <h2>Blocos de Constitucionalidade</h2>
+                        <h3 class="cascade-js">Acadêmicos: Ana Vitória Miranda Souza
+                        </h3>
+                        <h3 class="cascade-js">Eduarda Quaresma Teixeira Cabral</h3>
+                        <h3 class="cascade-js">João Gabriel da Silva Freitas
+                        </h3>
+                        <h3 class="cascade-js">Luana Cardoso Camara
+                        </h3>
+                        <h3 class="cascade-js">Luana Batista
+                        </h3>
+                        <h3 class="cascade-js"> Pedro Baruffi</h3>
+
+                    </div>
+                </div>
+                <button onclick="avancarCena()" class="arrow next"><img src="assets/imgs/seta1.png" alt="arrow" />
+                    <p>Iniciar</p>
+                </button>
+            </div>
+            <div class="scene" style="background: lightgreen;">
+                <div class="cena2">
+                    <div class="cabecalho">
+                        <button class="arrow2" onclick="avancarCena()"><img src="assets/imgs/seta1.png"
+                                alt="arrow" /></button>
+                        <h2>O QUE SÃO BLOCOS DE CONSTITUCIONALIDADE?</h2>
+                    </div>
+                    <div class="texto-info">
+                        <div>
+                            <h3>Segundo Lenza, o bloco de constitucionalidade é o conjunto de normas e princípios que
+                                formam o parâmetro de controle de constitucionalidade — aquilo contra o que se confronta
+                                a compatibilidade das normas infraconstitucionais.
+                                Ou seja, não se usa apenas um artigo isolado da Constituição: Utiliza-se todo esse
+                                conjunto ampliado de normas constitucionais, escritas ou não, e princípios que têm força
+                                normativa e supremacia jurídica</h3>
+                        </div>
+                    </div>
+                    <div class="fundo"></div>
+                </div>
+
+            </div>
+            <div class="scene" style="background: lightblue;">
+                 <div class="nuvens">
+                    <img src="assets/imgs/clouds.png" class="cloud">
+                    <img src="assets/imgs/clouds.png" class="cloud2">
+                    <img src="assets/imgs/clouds.png" class="cloud3">
+                </div>
+                <div class="cena3">
+                    <div>
+                        <div class="cabecalho">
+                            <button class="arrow2" onclick="avancarCena()"><img src="assets/imgs/seta1.png"
+                                    alt="arrow" /></button>
+                            <h2>Resumo prático</h2>
+                        </div>
+                        <div class="texto-central">
+                            <h3>
+                                Bloco de constitucionalidade = É um conjunto ampliado de normas e princípios
+                                constitucionais
+                                (escritos ou não) que serve como parâmetro para aferir se atos infraconstitucionais são
+                                constitucionais. Além da Constituição e das emendas, inclui-se direitos humanos de
+                                tratados
+                                aprovados com quórum qualificado. Fundamenta atividades de controle de
+                                constitucionalidade,
+                                como no âmbito do STF.
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="fundo_blocos">
+
+                        <img class="boneco1" src="/assets/imgs/boneco1.png" alt="boneco1" />
+                        <img class="boneco2" src="/assets/imgs/boneco2.png" alt="boneco2" />
+                        <img class="boneco3" src="/assets/imgs/boneco3.png" alt="boneco3" />
+                        <img class="boneco4" src="/assets/imgs/boneco4.png" alt="boneco4" />
+
+                        <div>
+                            <img class="blocos" src="/assets/imgs/blocos.png" alt="blocos" />
+                        </div>
+
+                    </div>
+                    <div class="fundo"></div>
+                </div>
+            </div>
+        </div>
+        <img id="player" src="/assets/imgs/sprite.png" alt="Personagem">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
