@@ -12,6 +12,27 @@ titles.forEach((el, i) => {
   }, i * 400);
 });
 
+function tocarMusicaInicial() {
+  const audio = document.getElementById("meuAudio");
+audio.muted = true;   
+  audio.play().then(() => {
+    audio.muted = false;
+    audio.volume = 0.10; // volume 5%
+  });
+}
+
+function tocarMusicaFinal() {
+  const audio = document.getElementById("meuAudioFinal");
+const inicial = document.getElementById("meuAudio");
+   inicial.pause();      // garante que o outro áudio pare
+  inicial.currentTime = 0;
+audio.muted = true;   
+  audio.play().then(() => {
+    audio.muted = false;
+    audio.volume = 0.10; // volume 5%
+  });
+}
+
 function avancarCena() {
   if (andando) return; // trava clique se já estiver andando
   andando = true;
@@ -166,17 +187,66 @@ function startConfetti() {
     });
   }, 200);
 
-  setTimeout(() => clearInterval(interval), duration);
+  setTimeout(() =>  clearInterval(interval), duration);
 }
 
 // --- Botão SIM dispara fogos e confetti ---
-document.getElementById("btnSim").addEventListener("click", () => {
-  // explosões de fogos 3 segundos
+function clicar () {
+  avancarCena()
   const fireworkInterval = setInterval(() => {
     createFirework(Math.random()*canvas.width, Math.random()*canvas.height);
   }, 300);
   setTimeout(() => clearInterval(fireworkInterval), 3000);
 
-  // confettis 3 segundos
+  iniciarAlbum()
   startConfetti();
-});
+}
+
+const fotosAlbum = [
+  '/assets/imgs/foto1.jpg',
+'/assets/imgs/foto2.jpg',
+'/assets/imgs/foto3.jpg',
+'/assets/imgs/foto4.jpg',
+'/assets/imgs/foto5.jpg',
+'/assets/imgs/foto6.jpg',
+'/assets/imgs/foto7.jpg',
+'/assets/imgs/foto8.jpg',
+'/assets/imgs/foto9.jpg',
+'/assets/imgs/foto10.jpg',
+'/assets/imgs/foto11.jpg',
+'/assets/imgs/foto12.jpg',
+];
+
+let idxAlbum = 0;
+let timerAlbum = null;
+
+function preloadAlbum() {
+  fotosAlbum.forEach(src => { const im = new Image(); im.src = src; });
+}
+preloadAlbum();
+
+function iniciarAlbum() {
+  const img = document.getElementById("album-img");
+  if (!img) return;
+
+  // reinicia
+  idxAlbum = 0;
+  img.classList.remove("show");
+  img.src = fotosAlbum[idxAlbum];
+  requestAnimationFrame(() => img.classList.add("show"));
+
+  // limpa intervalos anteriores (se houver)
+  if (timerAlbum) clearInterval(timerAlbum);
+
+  // troca automática a cada 3s
+  timerAlbum = setInterval(() => {
+    idxAlbum = (idxAlbum + 1) % fotosAlbum.length;
+    img.classList.remove("show");
+    // pequeno delay para suavizar o fade
+    setTimeout(() => {
+      img.src = fotosAlbum[idxAlbum];
+      img.classList.add("show");
+    }, 120);
+  }, 3000);
+}
+

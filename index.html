@@ -14,6 +14,14 @@
 <body>
     <div id="game">
         <div id="world">
+            <audio id="meuAudio">
+  <source src="/musica/Eric Skiff - A Night Of Dizzy Spells  NO COPYRIGHT 8-bit Music + Background.mp3" type="audio/mpeg">
+  Seu navegador não suporta áudio.
+</audio>
+<audio id="meuAudioFinal">
+  <source src="/musica/Take On Me (8 Bit Remix Cover Version) [Tribute to A-ha] - 8 Bit Universe.mp3" type="audio/mpeg">
+  Seu navegador não suporta áudio.
+</audio>
             <div class="scene" style="background: lightblue;">
                 <div class="nuvens">
                     <img src="assets/imgs/clouds.png" class="cloud">
@@ -38,7 +46,7 @@
 
                     </div>
                 </div>
-                <button onclick="avancarCena()" class="arrow next"><img src="assets/imgs/seta1.png" alt="arrow" />
+                <button onclick="avancarCena(); tocarMusicaInicial()" class="arrow next"><img src="assets/imgs/seta1.png" alt="arrow" />
                     <p>Iniciar</p>
                 </button>
             </div>
@@ -64,11 +72,11 @@
 
             </div>
             <div class="scene" style="background: lightblue;">
-                <div class="nuvens">
+                <!-- <div class="nuvens">
                     <img src="assets/imgs/clouds.png" class="cloud">
                     <img src="assets/imgs/clouds.png" class="cloud2">
                     <img src="assets/imgs/clouds.png" class="cloud3">
-                </div>
+                </div> -->
                 <div class="cena3">
                     <div >
                         <div class="cabecalho">
@@ -132,7 +140,7 @@
                     <img src="assets/imgs/clouds.png" class="cloud2">
                     <img src="assets/imgs/clouds.png" class="cloud3">
                 </div>
-              <canvas id="canvas"></canvas>
+          
                 <div class="cena5">
 
                     <div class="pergunta-final">
@@ -146,12 +154,35 @@
                             <h2>PROF. ARTHUR, ACEITA SER O NOSSO PARANINFO?</h2>
                         </div>
                         <div class="botoes">
-                            <button id="btnSim">SIM</button>
-                            <button id="btnSim">YES(SIM SO QUE EM INGLES)</button>
+                            <button onclick="clicar(); tocarMusicaFinal()">SIM</button>
+                            <button onclick="clicar(); tocarMusicaFinal()">YES(SIM SO QUE EM INGLES)</button>
                         </div>
                     </div>
 
                     </button>
+                    <div class="arbustos"></div>
+                    <div class="fundo"></div>
+                </div>
+            </div>
+             <div class="scene" style="background: lightblue;">
+                <div class="nuvens">
+                    <img src="assets/imgs/clouds.png" class="cloud">
+                    <img src="assets/imgs/clouds.png" class="cloud2">
+                    <img src="assets/imgs/clouds.png" class="cloud3">
+                </div>
+                 <canvas id="canvas"></canvas>
+                <div class="cena6">
+
+            
+       
+
+    <div class="album">
+      <img id="album-img" src="assets/imgs/foto1.jpg" alt="Álbum da turma">
+    </div>
+ <div class="faixa">
+      <h2 class="mensagem">O PROFESSOR ACEITOU SER O NOSSO PARANINFO!!!</h2>
+    </div>
+                
                     <div class="arbustos"></div>
                     <div class="fundo"></div>
                 </div>
