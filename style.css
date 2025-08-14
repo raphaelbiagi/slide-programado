@@ -53,7 +53,7 @@ body {
 
 #world {
     display: flex;
-    width: 300vw;
+    width: 500vw;
     /* 3 cenas */
     height: 100vh;
     position: absolute;
@@ -357,6 +357,226 @@ body {
     }
 }
 
+.cena4 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: relative;
+    justify-content: space-between;
+
+    .pergunta {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+
+        img {
+            animation: saltitar 1s ease-in-out infinite;
+        }
+
+        .arrow3 {
+
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            width: 15%;
+            border-radius: 20px;
+            justify-content: center;
+            background-color: transparent;
+            gap: 20px;
+
+            img {
+                width: 150px;
+                height: 150px;
+                animation: swing 1s infinite ease-in-out;
+                user-select: none;
+                display: inline-block;
+            }
+
+        }
+
+        .questao {
+            width: 40%;
+            text-align: center;
+
+            h2 {
+                font-size: 55px;
+                font-family: 'Press Start 2P', cursive;
+                font-weight: 700 !important;
+                color: #007d2a;
+
+            }
+        }
+
+
+    }
+
+    .arbustos {
+        background-image: url('/assets/imgs/grama.png');
+        background-repeat: repeat;
+        position: absolute;
+        bottom: 43px;
+        width: 100%;
+        background-size: 100%;
+        height: 100px;
+    }
+
+    .fundo {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 43px;
+        background-color: #106e16;
+    }
+}
+
+.cena5 {
+    background-image: url('/assets/imgs/fase5.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+
+    .pergunta-final {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+
+        .questao {
+            width: 50%;
+            text-align: center;
+
+            h2 {
+                font-size: 55px;
+                font-family: 'Press Start 2P', cursive;
+                font-weight: 700 !important;
+                color: #ff00d3;
+
+            }
+        }
+
+        .botoes {
+            width: 21%;
+            display: flex;
+            gap: 40px;
+
+            button {
+                width: 50%;
+                appearance: none;
+                background: #c0c0c0;
+                /* cinza clássico */
+                border: 2px solid #fff;
+                /* topo/esquerda claros */
+                border-right-color: #000;
+                /* direita escura */
+                border-bottom-color: #000;
+                /* baixo escura */
+                box-shadow:
+                    0 0 0 2px #000,
+                    /* <<< moldura preta externa */
+                    inset -1px -1px #808080,
+                    /* vinco interno escuro */
+                    inset 1px 1px #dfdfdf;
+                /* vinco interno claro */
+                padding: 10px;
+                font-family: "MS Sans Serif", Tahoma, Geneva, sans-serif;
+                font-size: 20px;
+                font-weight: 300;
+                cursor: pointer;
+            }
+
+            button:active {
+                border-color: #000;
+                border-right-color: #fff;
+                border-bottom-color: #fff;
+                box-shadow:
+                    0 0 0 2px #000,
+                    inset -1px -1px #dfdfdf,
+                    inset 1px 1px #808080;
+            }
+
+
+        }
+
+    }
+
+    .coracao1 {
+        width: 5%;
+        left: 40px;
+        position: absolute;
+        animation: saltitar 0.5s ease-in-out infinite;
+        animation-delay: 0.2s;
+    }
+
+    .coracao2 {
+        width: 4%;
+        position: absolute;
+        right: 40px;
+        animation: saltitar 0.5s ease-in-out infinite;
+        animation-delay: 0.4s;
+    }
+
+    .coracao3 {
+        width: 7%;
+        position: absolute;
+        top: 0;
+        left: 320px;
+        animation: saltitar 0.5s ease-in-out infinite;
+        animation-delay: 0.6s;
+    }
+
+    .coracao4 {
+        width: 7%;
+        top: 100px;
+        right: 320px;
+        position: absolute;
+        animation: saltitar 0.5s ease-in-out infinite;
+        animation-delay: 0.8s;
+    }
+
+    .coracao5 {
+        width: 4%;
+        position: absolute;
+        bottom: 100px;
+        left: 400px;
+        animation: saltitar 0.5s ease-in-out infinite;
+        animation-delay: 1.0s;
+    }
+
+    .coracao6 {
+        width: 4%;
+        position: absolute;
+        bottom: 100px;
+        right: 400px;
+        animation: saltitar 0.5s ease-in-out infinite;
+        animation-delay: 1.2s;
+    }
+
+    /* .fundo {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 30px;
+        background-color: #106e16;
+        } */
+}
+
 .nuvens {
     width: 100%;
     height: 50px;
@@ -389,6 +609,16 @@ body {
     animation: cloud 30s infinite linear;
     top: 0;
     z-index: 9999;
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #f00;
+    /* Example color */
+    opacity: 0;
+    /* Start invisible */
 }
 
 @keyframes cloud {
@@ -455,4 +685,102 @@ body {
     50% {
         transform: translateY(-20px);
     }
+}
+
+@media (max-width: 1366px) {
+    .arrow {
+        left: 600px;
+        font-size: 16px;
+    }
+
+    .arrow img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .cena1 .texto-inicial h1 {
+        font-size: 80px;
+    }
+
+    .cena1 .texto-inicial .diferente,
+    .cena1 .texto-inicial h2 {
+        font-size: 70px;
+    }
+
+    .cena1 .texto-inicial h3 {
+        font-size: 40px;
+    }
+
+    .cena2 .cabecalho .arrow2 img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .cena2 .cabecalho h2 {
+        font-size: 30px;
+    }
+
+    .cena2 .texto-info div h3 {
+        font-size: 35px;
+    }
+
+    .cena3 .cabecalho .arrow2 img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .cena3 .cabecalho h2 {
+        font-size: 30px;
+    }
+
+    .cena3 .texto-central {
+        padding-left: 150px;
+    }
+
+    .cena3 .texto-central h3 {
+        font-size: 30px;
+    }
+
+    .cena4 .pergunta .arrow3 img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .cena4 .pergunta .questao h2 {
+        font-size: 45px;
+    }
+
+    .cena5 .pergunta-final .questao h2 {
+        font-size: 45px;
+    }
+
+    .cena5 .pergunta-final .botoes {
+        width: 30%;
+    }
+
+    .cena5 .coracao3 {
+        left: 200px;
+    }
+
+    .cena5 .coracao4 {
+        right: 200px;
+    }
+
+    .cena5 .coracao5 {
+        left: 280px;
+    }
+
+    .cena5 .coracao6 {
+        right: 280px;
+    }
+}
+
+#canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* assim não bloqueia cliques nos botões */
+  z-index: 9999; /* para ficar na frente */
 }
