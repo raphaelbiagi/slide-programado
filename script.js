@@ -12,26 +12,7 @@ titles.forEach((el, i) => {
   }, i * 400);
 });
 
-function tocarMusicaInicial() {
-  const audio = document.getElementById("meuAudio");
-audio.muted = true;   
-  audio.play().then(() => {
-    audio.muted = false;
-    audio.volume = 0.10; // volume 5%
-  });
-}
 
-function tocarMusicaFinal() {
-  const audio = document.getElementById("meuAudioFinal");
-const inicial = document.getElementById("meuAudio");
-   inicial.pause();      // garante que o outro áudio pare
-  inicial.currentTime = 0;
-audio.muted = true;   
-  audio.play().then(() => {
-    audio.muted = false;
-    audio.volume = 0.10; // volume 5%
-  });
-}
 
 function avancarCena() {
   if (andando) return; // trava clique se já estiver andando
