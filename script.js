@@ -184,18 +184,18 @@ function clicar () {
 }
 
 const fotosAlbum = [
-  '/assets/imgs/foto1.jpg',
-'/assets/imgs/foto2.jpg',
-'/assets/imgs/foto3.jpg',
-'/assets/imgs/foto4.jpg',
-'/assets/imgs/foto5.jpg',
-'/assets/imgs/foto6.jpg',
-'/assets/imgs/foto7.jpg',
-'/assets/imgs/foto8.jpg',
-'/assets/imgs/foto9.jpg',
-'/assets/imgs/foto10.jpg',
-'/assets/imgs/foto11.jpg',
-'/assets/imgs/foto12.jpg',
+  'assets/imgs/foto1.jpg',
+'assets/imgs/foto2.jpg',
+'assets/imgs/foto3.jpg',
+'assets/imgs/foto4.jpg',
+'assets/imgs/foto5.jpg',
+'assets/imgs/foto6.jpg',
+'assets/imgs/foto7.jpg',
+'assets/imgs/foto8.jpg',
+'assets/imgs/foto9.jpg',
+'assets/imgs/foto10.jpg',
+'assets/imgs/foto11.jpg',
+'assets/imgs/foto12.jpg',
 ];
 
 let idxAlbum = 0;
