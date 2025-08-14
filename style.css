@@ -107,7 +107,7 @@ body {
 }
 
 .cena1 {
-  background-image: url("/assets/imgs/fase1.png");
+  background-image: url("assets/imgs/fase1.png");
   background-repeat: no-repeat;
   background-size: 100%;
   width: 100%;
@@ -157,7 +157,7 @@ body {
 }
 
 .cena2 {
-  background-image: url("/assets/imgs/fase2.png");
+  background-image: url("assets/imgs/fase2.png");
   background-repeat: no-repeat;
   background-size: 100%;
   width: 100%;
@@ -402,7 +402,7 @@ body {
 }
 
 .cena4 .arbustos {
-  background-image: url("/assets/imgs/grama.png");
+  background-image: url("assets/imgs/grama.png");
   background-repeat: repeat;
   position: absolute;
   bottom: 40px;
@@ -421,7 +421,7 @@ body {
 }
 
 .cena5 {
-  background-image: url("/assets/imgs/fase5.png");
+  background-image: url("assets/imgs/fase5.png");
   background-repeat: no-repeat;
   background-size: 100%;
   width: 100%;
@@ -434,7 +434,7 @@ body {
 }
 
 .cena5 .arbustos {
-  background-image: url("/assets/imgs/grama.png");
+  background-image: url("assets/imgs/grama.png");
   background-repeat: repeat;
   position: absolute;
   bottom: 40px;
@@ -554,7 +554,7 @@ body {
 }
 
 .cena6 {
-  background-image: url("/assets/imgs/fase5.png");
+  background-image: url("assets/imgs/fase5.png");
   background-repeat: no-repeat;
   background-size: 100%;
   width: 100%;
@@ -570,7 +570,7 @@ body {
 }
 
 .cena6 .arbustos {
-  background-image: url("/assets/imgs/grama.png");
+  background-image: url("assets/imgs/grama.png");
   background-repeat: repeat;
   position: absolute;
   bottom: 30px;
